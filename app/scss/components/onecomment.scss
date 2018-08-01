@@ -1,0 +1,35 @@
+.container{
+    max-width: 940px;
+    margin: 0 auto;
+}
+.onecomment{
+    display: grid;
+    grid-template-rows: repeat(auto-fit, minmax(20px, 1fr));
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas:
+    "back-to-main onecomment-img onecomment-img ."
+    ". onecomment-author onecomment-author . "
+    ". onecomment-text onecomment-text . "
+    ". onecomment-data onecomment-data . "
+    ". comments-list comments-list ."
+    ". form form .";
+    &__img{
+        grid-area: onecomment-img;
+        max-width: 300px;
+        width: 100%;
+        justify-self: center;
+        margin-bottom: 10px;
+    }
+    &__author{
+        grid-area: onecomment-author;
+        justify-self: center;
+    }
+    &__text{
+        grid-area: onecomment-text;
+        justify-self: center;
+    }
+    &__data{
+        grid-area: onecomment-data;
+        justify-self: center;
+    }
+}

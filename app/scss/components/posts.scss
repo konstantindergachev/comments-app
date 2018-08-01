@@ -1,0 +1,101 @@
+.posts {
+    &__title {
+        display: block;
+        text-align: center;
+        grid-area: non-posts;
+    }
+    &__list {
+        grid-area: posts-list;
+        width: 100%;
+    }
+    &__item {
+        box-shadow: var(--button-box-shadow);
+        margin: 10px;
+        display: grid;
+        grid-gap: 10px;
+        grid-template-rows: repeat(auto-fit, minmax(20px, 1fr));
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-areas:
+        "img author author edit-btn delete-btn"
+         "img text text date date "
+         "img comment-btn . . ."
+         ". comments-list comments-list comments-list comments-list" "non-comments non-comments non-comments non-comments non-comments";
+         @include respma(750){
+            grid-template-areas:
+            "img author author edit-btn delete-btn"
+             "img text text date date "
+             "img comment-btn . . ."
+             "comments-list comments-list comments-list comments-list comments-list" "non-comments non-comments non-comments non-comments non-comments";
+         }
+    }
+    &__img {
+        max-width: 200px;
+        grid-area: img;
+        @include respma(750){
+            width: 100%;
+        }
+    }
+    &__author {
+        grid-area: author;
+        align-self: center;
+        justify-self: flex-start;
+        font-size: 18px;
+        font-weight: 700;
+    }
+    &__edit-btn, &__delete-btn, &__comment-btn {
+        width: 100%;
+        text-decoration: none;
+        margin: 0px;
+        padding: 0px;
+        font-family: inherit;
+        font-size: inherit;
+        font-weight: inherit;
+        line-height: 36px;
+        text-align: center;
+        cursor: pointer;
+        outline: none;
+        border-radius: 2px;
+        background-color: var(--post-btn-bcg-col);
+        box-shadow: var(--button-box-shadow);
+        transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;
+        &:hover {
+            background-color: var(--post-btn-bcg-col-hover);
+        }
+        &:active {
+            box-shadow: var(--button-box-shadow-active);
+        }
+        @include respma(750){
+            height: 26px;
+            font-size: 14px;
+            line-height: 26px;
+        }
+    }
+    &__edit-btn {
+        grid-area: edit-btn;
+        justify-self: flex-start;
+        align-self: flex-start;
+        color: var(--edit-btn-col);
+    }
+    &__delete-btn {
+        grid-area: delete-btn;
+        justify-self: flex-start;
+        align-self: flex-start;
+        color: var(--delete-btn-col);
+    }
+    &__text {
+        grid-area: text;
+        text-align: left;
+        overflow-wrap: break-word;
+        text-align: justify;
+        text-indent: 15px;
+    }
+    &__date{
+        grid-area: date;
+        font-size: 12px;
+        justify-self: flex-end;
+    }
+    &__comment-btn {
+        grid-area: comment-btn;
+        color: var(--comment-btn-col);
+    }
+}

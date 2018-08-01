@@ -1,0 +1,18 @@
+-const action = comment ? `/post/comment/edit/${comment._id}` : post ? `/post/edit/${post._id}` : `/post/create`;
+-const enctype = comment ? `multipart/form-data` : post ? `multipart/form-data` : `multipart/form-data`;
+-const author = comment ? comment.author : post ? post.author : '';
+-const text = comment ? comment.text : post ? post.text : '';
+
+if (pageID !== 'index')
+    include flash-message
+    a.back-to-main(href='/') &#8701; Back
+form.post__form(name='postForm' method='POST' action=action enctype= enctype)
+    .post__form-field
+        textarea.post__form-control(cols='30', rows='10' name='text', placeholder='Comment text' tabindex='1')=text
+    .post__form-field
+        input#title.post__form-control(type='text', name='name', value=author, placeholder='Author name' tabindex='2')
+    .post__form-field
+        input#photo.post__form-control.hide(type='file' name='photo' accept='image/jpeg, image/png')
+        label.upload__photo(for='photo')
+            span File
+        input#btn.post__form-control.submit__btn(type='submit' value='Comment')

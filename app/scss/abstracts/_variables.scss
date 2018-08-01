@@ -1,0 +1,54 @@
+/*---------- 'Sizes' ----------*/
+:root{
+    --footer-height: 56px;
+    --header-height: 56px;
+    --background-color: #ffffff;
+
+    --back-to-main-bcg: #c5d5c5;
+    --back-to-main-bcg-hover: rgba(0, 0, 0, 0.08);
+    --back-to-main-col: #4f3222;
+
+    --button-box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 6px, rgba(0, 0, 0, 0.12) 0px 1px 4px;
+    --button-box-shadow-active: rgba(0, 0, 0, 0.16) 0px 3px 10px, rgba(0, 0, 0, 0.23) 0px 3px 10px;
+
+    --input-placeholder-col: #ffffff;
+
+    --form-control-border-col: #c5d5c5;
+    --form-control-bcg-col: #00000000;
+    --form-control-col: rgba(0, 0, 0, 0.87);
+
+    --input-control-placeholder: #c5d5c5;
+    --input-focus-border-bottom-col: #4886d9;
+    --input-focus-col: #0000002;
+
+    --submit-btn-bcg-col: #c5d5c5;
+    --submit-btn-col: #4f3222;
+    --submit-btn-bcg-col: rgba(0, 0, 0, 0.08);
+
+    --upload-photo-btn-bcg-col: #9fa9a3;
+
+    --error-btn-bcg-col: #f08080;
+    --error-btn-col: #ffffff;
+
+    --post-btn-bcg-col: #c5d5c5;
+    --post-btn-bcg-col-hover: rgba(0, 0, 0, 0.08);
+
+    --edit-btn-col: #4f3222;
+    --delete-btn-col: #ff0000;
+    --comment-btn-col: #4f3222;
+
+    --comments-btn-bcg-col: #c5d5c5;
+    --comments-btn-bcg-col-hover: rgba(0, 0, 0, 0.08);
+
+    --flash-inner-bcg-col: rgba(0, 0, 0, 0.54);
+    --flash-bcg-col: #ffffff;
+    --flash-box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 45px, rgba(0, 0, 0, 0.22) 0px 10px 18px;
+    --flash-remove-btn-bcg-col: #ff0000;
+    --flash-remove-btn-bcg-col-hover: #f08080;
+    --flash-remove-btn-col: #4f3222;
+    --flash-remove-btn-col-hover: #ffffff;
+    --flash-success-btn-bcg: linear-gradient(20deg, rgb(247, 216, 127) 0%, rgb(255, 196, 14) 100%);
+    --flash-success-btn-col: #4f3222;
+    --flash-error-col: #ffffff;
+    --flash-error-bcg: linear-gradient(20deg, rgb(240, 128, 128) 0%, rgb(232, 49, 49) 100%);
+}

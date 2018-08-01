@@ -1,0 +1,3 @@
+# Comments application
+
+A simple app for writing comments and comment comments. This application based on Express.js framework. Users data stored in a MongoDB. MongoDB objects modeling carried out through mongoose library. The user of the application recieves a nicely message about his action througt connect-flash middleware. The app has a simple client side data validation. HTML was created by pug template engine. CSS stylesheet was created by SASS preprocessor (SCSS syntax).

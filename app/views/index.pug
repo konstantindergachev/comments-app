@@ -1,0 +1,32 @@
+extends layout
+
+include mixins/comment
+
+block content
+    section.app
+        include components/flash-message
+        .app__centered
+            include components/create
+            if !(posts && posts.length)
+                span.posts__title No posts
+            else if(posts)
+                ul.posts__list
+                    each post in posts
+                        - const date = post.created.toString().substring(0, 24)
+                        li.posts__item
+                            img.posts__img(src= post.photo, alt= post.photoId)
+                            .posts__author= post.author
+                            a.posts__edit-btn(href=`/post/edit/${post._id}`) Edit
+                            a.posts__delete-btn(href=`/post/remove/${post._id}`) Delete
+                            p.posts__text= post.text
+                            p.posts__date= date
+                            a.posts__comment-btn(href=`/post/${post._id}`) Reply
+                            if !(comments && comments.length)
+                                span.comments__title No comments
+                            else if (comments)
+                                ul.comments__list
+                                  each comment in comments
+                                    -const c = Object.values(comment.post);
+                                    -const p = Object.values(post._id);
+                                    if(c.toString() === p.toString())
+                                        +comment(comment)

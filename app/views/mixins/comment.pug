@@ -1,0 +1,10 @@
+mixin comment(comment)
+    li.comments__item
+        - const date = comment.created.toString().substring(0, 24)
+        img.comments__img(src= comment.photo, alt= comment.photoId)
+        p.comments__author= comment.author
+        a.comments__edit-btn(href=`/post/comment/edit/${comment.post}`) Edit
+        a.comments__delete-btn(href=`/post/comment/remove/${comment.post}`) Delete
+        p.comments__text= comment.text
+        p.comments__date= date
+        a.comments__comment-btn(href=`/post/comment/${comment._id}`) Reply

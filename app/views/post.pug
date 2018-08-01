@@ -1,0 +1,11 @@
+extends layout
+
+block content
+    section.app
+        if (pageID === 'postRecord')
+            include components/onepost
+        if (pageID === 'commentRecord')
+            include components/onecomment
+        .app__centered
+            if (pageID === 'postEdit' || pageID === 'commentEdit')
+                include components/create

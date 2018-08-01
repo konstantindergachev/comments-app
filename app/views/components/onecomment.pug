@@ -1,0 +1,20 @@
+include ../mixins/comment
+block content
+    include flash-message
+    section.onecomment
+        - const date = comment.created.toString().substring(0, 24)
+        a.back-to-main(href='/') &#8701; Back
+        img.onecomment__img(src=`${comment.photo}`, alt='user avatar')
+        h2.onecomment__author= comment.author
+        p.onecomment__text= comment.text
+        span.onecomment__data= date
+        form.comments__form(name='postForm' method='POST' action=`/post/comment/${comment._id}` enctype= `multipart/form-data`)
+            .post__form-field
+                textarea.post__form-control(cols='30', rows='10' name='text', placeholder='Comment text' tabindex='2')
+            .post__form-field
+                input#title.post__form-control(type='text', name='name', value='', placeholder='Author name' tabindex='1')
+            .post__form-field
+                input#photo.post__form-control.hide(type='file' name='photo' accept='image/jpeg, image/png')
+                label.upload__photo(for='photo')
+                    span File
+                input#btn.post__form-control.submit__btn(type='submit' value='Comment')

@@ -1,0 +1,35 @@
+.container{
+    max-width: 940px;
+    margin: 0 auto;
+}
+.onepost{
+    display: grid;
+    grid-template-rows: repeat(auto-fit, minmax(20px, 1fr));
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas:
+    "back-to-main onepost-img onepost-img ."
+    ". onepost-author onepost-author . "
+    ". onepost-text onepost-text . "
+    ". onepost-data onepost-data . "
+    ". comments-list comments-list ."
+    ". form form .";
+    &__img{
+        grid-area: onepost-img;
+        max-width: 300px;
+        width: 100%;
+        justify-self: center;
+        margin: 10px 0;
+    }
+    &__author{
+        grid-area: onepost-author;
+        justify-self: center;
+    }
+    &__text{
+        grid-area: onepost-text;
+        justify-self: center;
+    }
+    &__data{
+        grid-area: onepost-data;
+        justify-self: center;
+    }
+}

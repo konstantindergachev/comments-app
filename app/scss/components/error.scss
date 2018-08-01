@@ -1,0 +1,10 @@
+.wrapper__error{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.error__message{
+    margin-top: 20px;
+    text-align: center;
+}

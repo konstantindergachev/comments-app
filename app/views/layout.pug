@@ -1,0 +1,9 @@
+doctype html
+html(lang='ru-Ru')
+    head
+        title= pageTitle
+        include layout/head
+    body(id=pageID)
+        block content
+        include components/js-files/custom-validator
+        include components/js-files/photo
